@@ -1,73 +1,77 @@
-*************************************************
-*×÷Õß:Eritque arcus                             *
-*Time:2020/2/5        							*
-*CSDNµØÖ·:https://me.csdn.net/qq_40832960 		*
-*Ãû³Æ:¶ÁĞ´iniÔËĞĞ¿â              				*
-*Îäºº¼ÓÓÍ!!!        							*
-*************************************************
+# INIReader #
+![Github](https://img.shields.io/badge/Author-Nambers-blue) ![Github](https://img.shields.io/badge/Time-2020/2/5-green)
 
-Ê¹ÓÃËµÃ÷:
+åŠŸèƒ½:è¯»å†™iniè¿è¡Œåº“
 
-±¾¾²Ì¬¿â¿ÉÒÔ¶ÁĞ´ÈÎºÎºó×ºµÄini¸ñÊ½µÄÅäÖÃÎÄ¼ş¡¾±ØĞëÓĞºó×º²»ÄÜÃ»ÓĞºó×º£¬¿ÉÒÔÊÇ.xxx,.sdasa,.dasasfµÈ£¬Ö»ÒªÄÚÈİÎªini¸ñÊ½¡¿
-±¾¿âÊ¹ÓÃÒ×ÓïÑÔÖÆ×÷(ÌØµã£ºÔËĞĞÂı£¬Ìå»ı´ó728KB)
-ÄÚÖÃ2¸öº¯Êı£º
+æ­¦æ±‰åŠ æ²¹!!!
 
 
-ReadInI(path,F,S)//¶Á
-pathÊÇ¶ÁÈ¡ÎÄ¼şµÄÂ·¾¶£¬±ØĞëÊÇ¾ø¶ÔÂ·¾¶¡¾ÅÌ·û¿ªÊ¼¡¿
-FÊÇ½ÚÃû
-SÊÇ¼üÃû
-·µ»Ø¼üÖµ
+ä½¿ç”¨è¯´æ˜:
+
+æœ¬é™æ€åº“å¯ä»¥è¯»å†™ä»»ä½•åç¼€çš„iniæ ¼å¼çš„é…ç½®æ–‡ä»¶ã€å¿…é¡»æœ‰åç¼€ä¸èƒ½æ²¡æœ‰åç¼€ï¼Œå¯ä»¥æ˜¯.xxx,.sdasa,.dasasfç­‰ï¼Œåªè¦å†…å®¹ä¸ºiniæ ¼å¼ã€‘
+æœ¬åº“ä½¿ç”¨æ˜“è¯­è¨€åˆ¶ä½œ(ç‰¹ç‚¹ï¼šè¿è¡Œæ…¢ï¼Œä½“ç§¯å¤§728KBï¼Œä¸è¿‡ç›¸æ¯”äºè‡ªå·±é€ è½®å­è¦æ–¹ä¾¿)
+å†…ç½®2ä¸ªå‡½æ•°ï¼š
 
 
-WriteInI(path,F,S,Z)//Ğ´
-pathÊÇ¶ÁÈ¡ÎÄ¼şµÄÂ·¾¶£¬±ØĞëÊÇ¾ø¶ÔÂ·¾¶¡¾ÅÌ·û¿ªÊ¼¡¿
-FÊÇ½ÚÃû
-SÊÇ¼üÃû
-ZÊÇĞ´ÈëÖµ
-·µ»Ø¼üÖµ
+`ReadInI(path,F,S)//è¯»`
+pathæ˜¯è¯»å–æ–‡ä»¶çš„è·¯å¾„ï¼Œå¿…é¡»æ˜¯ç»å¯¹è·¯å¾„ã€ç›˜ç¬¦å¼€å§‹ã€‘
+Fæ˜¯èŠ‚å
+Sæ˜¯é”®å
+è¿”å›é”®å€¼
+
+
+`WriteInI(path,F,S,Z)//å†™`
+pathæ˜¯è¯»å–æ–‡ä»¶çš„è·¯å¾„ï¼Œå¿…é¡»æ˜¯ç»å¯¹è·¯å¾„ã€ç›˜ç¬¦å¼€å§‹ã€‘
+Fæ˜¯èŠ‚å
+Sæ˜¯é”®å
+Zæ˜¯å†™å…¥å€¼
+è¿”å›é”®å€¼
 
 
 
-C++Ê¾Àı´úÂë:
-[code]
+C++ç¤ºä¾‹ä»£ç :
+```C++
 #include <Windows.h>
 
-typedef char* (WINAPI* ptrSub) (char*, char*, const char*);//¶¨Òåº¯Êı
-typedef bool (WINAPI* ptrSub2) (char*, char*, char*, const char*);//¶¨Òåº¯Êı
+typedef char* (WINAPI* ptrSub) (char*, char*, const char*);//å®šä¹‰å‡½æ•°
+typedef bool (WINAPI* ptrSub2) (char*, char*, char*, const char*);//å®šä¹‰å‡½æ•°
 
 int main(){
-	HMODULE hMod = LoadLibraryA("InI.dll");//µ¼ÈëÔËĞĞ¿â
+	HMODULE hMod = LoadLibraryA("InI.dll");//å¯¼å…¥è¿è¡Œåº“
 	if (hMod == NULL)
 	{
-		cout << "Error: ÕÒ²»µ½InI.dllÎÄ¼ş";
+		cout << "Error: æ‰¾ä¸åˆ°InI.dllæ–‡ä»¶";
 		return 0;
 	}
-	readinia = (ptrSub)GetProcAddress(hMod, "ReadInI");//µ¼Èëº¯Êı
+	readinia = (ptrSub)GetProcAddress(hMod, "ReadInI");//å¯¼å…¥å‡½æ•°
 	if (readinia == NULL)
 	{
-		cout << "InI.dllÎÄ¼şËğ»µ";
+		cout << "InI.dllæ–‡ä»¶æŸå";
 		return 0;
 	}
-	wini = (ptrSub2)GetProcAddress(hMod, "WriteInI");//µ¼Èëº¯Êı
+	wini = (ptrSub2)GetProcAddress(hMod, "WriteInI");//å¯¼å…¥å‡½æ•°
 	if (wini == NULL)
 	{
-		cout << "InI.dllÎÄ¼şËğ»µ";
+		cout << "InI.dllæ–‡ä»¶æŸå";
 		return 0;
 	}
 	char* read=readinia("D:\\aa.sadas","afasf","fasfa");
 	bool write=wini("d:\\sdasdas.fsa","sadsf","fasfd");
 	return 0;
 }
-[/code]
+```
 
 
-¸½Ôù:
+é™„èµ :
 
-char*µ½string
+char*åˆ°string
+```C++
 char* a;
-string b(a);//ÀûÓÃstringµÄÖØ¹¹
+string b(a);//åˆ©ç”¨stringçš„é‡æ„
+```
 
-stringµ½char*
+stringåˆ°char*
+```C++
 string a;
-char* b=a.c_str();//»òa.data()µÈ
+char* b=a.c_str();//æˆ–a.data()ç­‰
+```
